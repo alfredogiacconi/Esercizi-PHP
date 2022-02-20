@@ -25,7 +25,14 @@ la funzione dovrebbe essere chiamata 4 volte una ogni card
 -->
 
 <body>
-    <?php echo "<h1 class='text-center'>Esercizio PHP Card</h1>"; ?>
+    <?php echo "<h1 class='text-center'>Esercizio PHP creaCard</h1>"; ?>
+    <div class="row col-12">
+      <?php print creaCard("Titolo 1", "Descrizione: Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "https://source.unsplash.com/random/700×700?") ?>
+      <?php print creaCard("Titolo 2", "Descrizione: Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "https://source.unsplash.com/random/700×700?") ?>
+      <?php print creaCard("Titolo 3", "Descrizione: Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "https://source.unsplash.com/random/700×700?") ?>
+      <?php print creaCard("Titolo 4", "Descrizione: Lorem Ipsum is simply dummy text of the printing and typesetting industry.", "https://source.unsplash.com/random/700×700?") ?>
+    </div>
+    
 
     <!-- Optional JavaScript; choose one of the two! -->
 
@@ -43,8 +50,8 @@ la funzione dovrebbe essere chiamata 4 volte una ogni card
 
 </html>
 <?php
-  function creaCard ($titolo, $descrizione, $immagine) {
-    return <<<EOD
+  function creaCard($titolo, $descrizione, $immagine) {
+    $card = <<<EOD
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
       <div class="card">
         <img src="$immagine" class="card-img-top" alt="...">
@@ -56,5 +63,6 @@ la funzione dovrebbe essere chiamata 4 volte una ogni card
       </div>
     </div>
 EOD;
+    return $card;
   }
 ?>
